@@ -3,14 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签: AI | YiDaoJ&#39;s Blog</title>
+    <title>Dual Table in Oracle / Dual表在Oracle中的应用 | YiDaoJ&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="YiDaoJ's Blog">
-<meta property="og:url" content="http://yoursite.com/tags/AI/index.html">
+    <meta name="description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dual Table in Oracle / Dual表在Oracle中的应用">
+<meta property="og:url" content="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/index.html">
 <meta property="og:site_name" content="YiDaoJ's Blog">
+<meta property="og:description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
+<meta property="og:updated_time" content="2016-10-28T20:31:39.109Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YiDaoJ's Blog">
+<meta name="twitter:title" content="Dual Table in Oracle / Dual表在Oracle中的应用">
+<meta name="twitter:description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
     
 
     
@@ -203,50 +207,177 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#AI</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-Dual-Table-in-Oracle-Dual表在Oracle中的应用" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/18/AI练习-矢量扁平地图-Flat-Style-Vector-Map-in-Adobe-Illustrator/">AI练习-矢量扁平地图/Flat Style Vector Map in Adobe Illustrator</a>
+        <h1 class="article-title" itemprop="name">
+            Dual Table in Oracle / Dual表在Oracle中的应用
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/10/18/AI练习-矢量扁平地图-Flat-Style-Vector-Map-in-Adobe-Illustrator/">
-            <time datetime="2016-10-18T10:06:33.000Z" itemprop="datePublished">2016-10-18</time>
+        <a href="/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/">
+            <time datetime="2016-10-28T16:51:35.000Z" itemprop="datePublished">2016-10-28</time>
         </a>
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/平面设计/">平面设计</a>
+        <a class="article-category-link" href="/categories/DatenBank/">DatenBank</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/AI/">AI</a>, <a class="tag-link" href="/tags/练习/">练习</a>
+        <a class="tag-link" href="/tags/SQL/">SQL</a>
     </div>
 
-                </div>
-            </div>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <blockquote>
+<p>DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user <strong>SYS</strong> but is accessible by the name DUAL to all users.<br>It has one column, DUMMY, defined to be VARCHAR2(1), and contains one row with a value X. </p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure>
+<div><br>DU<br>—–<br>X<br></div>
+
+<blockquote>
+<p>Selecting from the DUAL table is useful for computing a constant expression with the SELECT statement. Because DUAL has only one row, the constant is returned only once. Alternatively, you can select a constant, pseudocolumn, or expression from any table, but the value will be returned as many times as there are rows in the table. Please refer to “SQL Functions” for many examples of selecting a constant value from DUAL.</p>
+</blockquote>
+<p>此外，DUAL表还有许多其他的用途：<br><strong>1. 查看当前用户</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">user</span> <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
+<div><br>USER<br>——<br>SCOTT<br></div>
+
+<p><strong>2. 调用系统函数，比如日期、随机获取数字等</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 获取当前系统时间</span></div><div class="line"><span class="keyword">SELECT</span> <span class="keyword">sysdate</span> <span class="keyword">FROM</span> DUAL;</div><div class="line"><span class="comment">-- 获取当前locale</span></div><div class="line"><span class="keyword">SELECT</span> SYS_CONTEXT(<span class="string">'USERENV'</span>,<span class="string">'LANGUAGE'</span>) <span class="keyword">FROM</span> DUAL;</div><div class="line"><span class="comment">-- 获取随机数字</span></div><div class="line"><span class="keyword">SELECT</span> dbms_tandom.random <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
+<p><strong>3. 进行数学运算</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="number">3</span>+<span class="number">6</span> <span class="keyword">FROM</span> DUAL;</div><div class="line"><span class="keyword">SELECT</span> <span class="number">5</span>*<span class="number">6.5</span> <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
+<p><strong>4. 查看序列值</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 创建一个从1开始，递增1的序列</span></div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">sequence</span> abc <span class="keyword">increment</span> <span class="keyword">by</span> <span class="number">1</span> <span class="keyword">start</span> <span class="keyword">with</span> <span class="number">1</span>;</div><div class="line"><span class="comment">-- 获取序列abc下一个值</span></div><div class="line"><span class="keyword">SELECT</span> abc.nextval <span class="keyword">FROM</span> DUAL; <span class="comment">-- 得到1</span></div><div class="line"><span class="keyword">SELECT</span> abc.nextval <span class="keyword">FROM</span> DUAL; <span class="comment">-- 重复执行，得到2</span></div><div class="line"><span class="comment">-- 获取序列abc当前值</span></div><div class="line"><span class="keyword">SELECT</span> abc.currval <span class="keyword">FROM</span> DUAL; <span class="comment">-- 得到2</span></div></pre></td></tr></table></figure></p>
+<p>注：序列建立后，<code>sequence.currval</code>一定要在<code>next.currval</code>后面执行；如果序列建立后就获取<code>sequence.currval</code>会报错：<code>sequence ABC.CURRVAL is not yet defined in this session</code>。</p>
+<p>文中引用出自：<a href="https://docs.oracle.com/cd/B19306_01/server.102/b14200/queries009.htm" target="_blank" rel="external">https://docs.oracle.com/cd/B19306_01/server.102/b14200/queries009.htm</a></p>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/" data-id="ciuu0qhbv00010oqx9g5uir3f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/10/18/AI练习-矢量扁平地图-Flat-Style-Vector-Map-in-Adobe-Illustrator/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">AI练习-矢量扁平地图/Flat Style Vector Map in Adobe Illustrator</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -369,11 +500,13 @@
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = 'http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/';
+        
+        this.page.identifier = 'Dual-Table-in-Oracle-Dual表在Oracle中的应用';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/count.js';
+        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
