@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/index.html">
 <meta property="og:site_name" content="YiDaoJ's Blog">
 <meta property="og:description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
-<meta property="og:updated_time" content="2016-10-28T20:31:39.109Z">
+<meta property="og:updated_time" content="2016-10-28T20:53:59.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dual Table in Oracle / Dual表在Oracle中的应用">
 <meta name="twitter:description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
@@ -253,7 +253,7 @@
             <blockquote>
 <p>DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user <strong>SYS</strong> but is accessible by the name DUAL to all users.<br>It has one column, DUMMY, defined to be VARCHAR2(1), and contains one row with a value X. </p>
 </blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure>
+<p>Dual在Oracle中是一个虚拟表，它只有一个类型为VARCHAR2的子段，即DUMMY，值为X。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
 <div><br>DU<br>—–<br>X<br></div>
 
 <blockquote>
@@ -277,7 +277,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/" data-id="ciuu8ncql0000r8qx4v5lutxz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/" data-id="ciuu9b5qn0001nsqxiv87j3nj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
