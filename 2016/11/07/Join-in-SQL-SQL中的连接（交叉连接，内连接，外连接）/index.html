@@ -1,51 +1,628 @@
-extends base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  <title>Join in SQL / SQL中的连接（交叉连接，内连接，外连接） | YiDaoJ&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SQL中的连接可分为交叉连接，内连接和外连接，其中又可以细化：
 
-block title
-  title= page.title + ' | ' + config.title
+交叉连接 (CROSS JOIN)
+内连接 (INNER JOIN)
+等值连接 (EQUI JOIN)
+不等值连接 (THETA JOIN)
+自然连接 (NATURAL JOIN)
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('ll')
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-    if theme.duoshuo
-      a.ds-thread-count(data-thread-key=page.path, href=url_for(page.path) + '#comments')
-    if theme.disqus
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content)
-    .post-content
-      != page.content
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url='#{page.permalink}', data-id='#{page._id}')= __('shareto')
-    include _partial/tag
-    include _partial/post_nav
-    if theme.duoshuo
-      div(class='ds-share flat' data-thread-key=page.path, data-title=page.title, data-url=page.permalink)
-         .ds-share-inline
-            ul.ds-share-icons-16
-              li(data-toggle='ds-share-icons-more')
-                a(class='ds-more' href='javascript:void(0);') 分享到：
-              li
-                a(class='ds-weibo' href='javascript:void(0);' data-service='weibo') 微博
-              li
-                a(class='ds-qzone' href='javascript:void(0);' data-service='qzone') QQ空间
-              li
-                a(class='ds-qqt' href='javascript:void(0);' data-service='qqt') 腾讯微博
-              li
-                a(class='ds-wechat' href='javascript:void(0);' data-service='wechat') 微信
-            .ds-share-icons-more
-    include _partial/comments
+
+外连接 (OUTER JOIN)
+左外连接 (LEFT JOIN)
+右外连接 (RIGHT JOIN)
+全外连接 (FULL JOIN)
+
+
+
+用O">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Join in SQL / SQL中的连接（交叉连接，内连接，外连接）">
+<meta property="og:url" content="http://yoursite.com/2016/11/07/Join-in-SQL-SQL中的连接（交叉连接，内连接，外连接）/index.html">
+<meta property="og:site_name" content="YiDaoJ's Blog">
+<meta property="og:description" content="SQL中的连接可分为交叉连接，内连接和外连接，其中又可以细化：
+
+交叉连接 (CROSS JOIN)
+内连接 (INNER JOIN)
+等值连接 (EQUI JOIN)
+不等值连接 (THETA JOIN)
+自然连接 (NATURAL JOIN)
+
+
+外连接 (OUTER JOIN)
+左外连接 (LEFT JOIN)
+右外连接 (RIGHT JOIN)
+全外连接 (FULL JOIN)
+
+
+
+用O">
+<meta property="og:image" content="http://2.bp.blogspot.com/-sirPT1-Ia68/UejlB6MuyCI/AAAAAAAAB1s/LtuoEBv5h8o/s1600/emp.png">
+<meta property="og:image" content="https://i.imgsafe.org/0767080fd3.jpg">
+<meta property="og:image" content="https://i.imgsafe.org/8a2b83e09a.jpg">
+<meta property="og:image" content="https://i.imgsafe.org/8aa40a9e73.jpg">
+<meta property="og:image" content="https://i.imgsafe.org/8b386608b5.jpg">
+<meta property="og:image" content="https://i.imgsafe.org/8b47154fe2.jpg">
+<meta property="og:image" content="https://i.imgsafe.org/8b387b7417.jpg">
+<meta property="og:image" content="https://i.imgsafe.org/8b38e03788.jpg">
+<meta property="og:updated_time" content="2016-11-13T19:10:13.808Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Join in SQL / SQL中的连接（交叉连接，内连接，外连接）">
+<meta name="twitter:description" content="SQL中的连接可分为交叉连接，内连接和外连接，其中又可以细化：
+
+交叉连接 (CROSS JOIN)
+内连接 (INNER JOIN)
+等值连接 (EQUI JOIN)
+不等值连接 (THETA JOIN)
+自然连接 (NATURAL JOIN)
+
+
+外连接 (OUTER JOIN)
+左外连接 (LEFT JOIN)
+右外连接 (RIGHT JOIN)
+全外连接 (FULL JOIN)
+
+
+
+用O">
+<meta name="twitter:image" content="http://2.bp.blogspot.com/-sirPT1-Ia68/UejlB6MuyCI/AAAAAAAAB1s/LtuoEBv5h8o/s1600/emp.png">
+  
+    <link rel="alternative" href="/atom.xml" title="YiDaoJ&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/kenny.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">YiDaoJ</a></h1>
+		</hgroup>
+
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/YiDaoJ" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+					<a class="mail" target="_blank" href="/jcxsusan@gmail.com" title="mail">mail</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">YiDaoJ</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/img/kenny.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">YiDaoJ</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/YiDaoJ" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/jcxsusan@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-Join-in-SQL-SQL中的连接（交叉连接，内连接，外连接）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Join in SQL / SQL中的连接（交叉连接，内连接，外连接）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>SQL中的连接可分为交叉连接，内连接和外连接，其中又可以细化：</p>
+<ul>
+<li>交叉连接 (CROSS JOIN)</li>
+<li>内连接 (INNER JOIN)<ul>
+<li>等值连接 (EQUI JOIN)</li>
+<li>不等值连接 (THETA JOIN)</li>
+<li>自然连接 (NATURAL JOIN)</li>
+</ul>
+</li>
+<li>外连接 (OUTER JOIN)<ul>
+<li>左外连接 (LEFT JOIN)</li>
+<li>右外连接 (RIGHT JOIN)</li>
+<li>全外连接 (FULL JOIN)</li>
+</ul>
+</li>
+</ul>
+<p>用Oracle数据库中的emp, dept和salgrade三张表为例，对以上各种连接进行解释和演示。</p>
+<p>三张表结构如下：</p>
+<p>emp表：</p>
+<p><img src="http://2.bp.blogspot.com/-sirPT1-Ia68/UejlB6MuyCI/AAAAAAAAB1s/LtuoEBv5h8o/s1600/emp.png" alt="emp表"></p>
+<p>​    上图来源：<a href="http://nuijten.blogspot.de/2013/07/apex-tree-based-on-multiple-tables.html" target="_blank" rel="external">http://nuijten.blogspot.de/2013/07/apex-tree-based-on-multiple-tables.html</a></p>
+<p>dept表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">DEPTNO</th>
+<th style="text-align:center">DNAME</th>
+<th style="text-align:center">LOC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">ACCOUNTING</td>
+<td style="text-align:center">NEW YORK</td>
+</tr>
+<tr>
+<td style="text-align:center">20</td>
+<td style="text-align:center">RESEARCH</td>
+<td style="text-align:center">DALLAS</td>
+</tr>
+<tr>
+<td style="text-align:center">30</td>
+<td style="text-align:center">SALES</td>
+<td style="text-align:center">CHICAGO</td>
+</tr>
+<tr>
+<td style="text-align:center">40</td>
+<td style="text-align:center">OPERATIONS</td>
+<td style="text-align:center">BOSTON</td>
+</tr>
+</tbody>
+</table>
+<p>salgrade表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">GRADE</th>
+<th style="text-align:center">LOSAL</th>
+<th style="text-align:center">HISAL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">700</td>
+<td style="text-align:center">1200</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1201</td>
+<td style="text-align:center">1400</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1401</td>
+<td style="text-align:center">2000</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">2001</td>
+<td style="text-align:center">3000</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">3001</td>
+<td style="text-align:center">9999</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-交叉连接-CROSS-JOIN"><a href="#1-交叉连接-CROSS-JOIN" class="headerlink" title="1. 交叉连接 (CROSS JOIN)"></a>1. 交叉连接 (CROSS JOIN)</h2><p>交叉连接不需要任何关联条件，它返回的是两个集合的笛卡尔积，也就是表一中每一行与表二中所有行的组合。交叉连接返回数据的行数为两表行数的乘积，所以交叉连接又叫笛卡尔连接(cartesian join)或叉乘(Product)，它是所有类型的内连接的基础。</p>
+<ul>
+<li>语法：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table1, table2;</div></pre></td></tr></table></figure>
+<ul>
+<li>范例：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp, dept;</div></pre></td></tr></table></figure>
+<p>emp表中又14条记录，dept表中有4行记录，返回数据14*4 = 56行记录。（篇幅原因就不上图了。）</p>
+<p>​</p>
+<h2 id="2-内连接-INNER-JOIN"><a href="#2-内连接-INNER-JOIN" class="headerlink" title="2. 内连接 (INNER JOIN)"></a>2. 内连接 (INNER JOIN)</h2><blockquote>
+<p>内连接基于连接谓词将两张表(如 A 和 B)的列组合在一起，产生新的结果表。查询会将 A 表的每一行和 B 表的每一行进行比较，并找出满足连接谓词的组合。当连接谓词被满足，A 和 B 中匹配的行会按列组合(并排组合)成结果集中的一行。连接产生的结果集，可以定义为首先对两张表做笛卡尔积(交叉连接) – 将 A 中的每一行和 B 中的每一行组合，然后返回满足连接谓词的记录。实际上 SQL 产品会尽可能用其他方式去实现连接，笛卡尔积运算是非常没效率的。</p>
+<p>内连接可以进一步被分为：相等连接，自然连接，和交叉连接。</p>
+</blockquote>
+<p>   via : <a href="https://zh.wikipedia.org/wiki/%E8%BF%9E%E6%8E%A5_(SQL" target="_blank" rel="external">维基百科-连接（SQL）</a></p>
+<h3 id="2-1-相等连接-等值连接-EQUI-JOIN"><a href="#2-1-相等连接-等值连接-EQUI-JOIN" class="headerlink" title="2.1 相等连接 / 等值连接 (EQUI JOIN)"></a>2.1 相等连接 / 等值连接 (EQUI JOIN)</h3><p>   等值连接中，在关联条件中使用等号（=）运算符进行不同表和字段的连接，满足关联条件后会显示相应的数据。</p>
+<ul>
+<li>范例：查询员工的编号、姓名、部门编号、部门名称。</li>
+<li><p>分析：员工的编号、姓名、部门编号在emp表中，部门编号、部门名称在dept表中，部门编号为两表共有字段，关联条件即从这里入手。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Syntax 1</span></div><div class="line"><span class="keyword">SELECT</span> e.empno, e.ename, e.deptno, d.dname</div><div class="line"><span class="keyword">FROM</span> emp e, dept d</div><div class="line"><span class="keyword">WHERE</span> e.deptno = d.deptno;</div><div class="line"></div><div class="line"><span class="comment">-- Syntax 2</span></div><div class="line"><span class="keyword">SELECT</span> e.empno, e.ename, e.deptno, d.dname</div><div class="line"><span class="keyword">FROM</span> emp e <span class="keyword">JOIN</span> dept d</div><div class="line"><span class="keyword">ON</span> e.deptno = d.deptno;</div></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<p><img src="https://i.imgsafe.org/0767080fd3.jpg" alt=""></p>
+</li>
+</ul>
+<p>  ​</p>
+<ul>
+<li><p>等值连接还有一种简易的语法规则，使用USING关键字；<strong>需要注意的是使用USING关键字时SELECT子句不能有限定词</strong>，否则会出现报错。方法如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> emp e [<span class="keyword">INNER</span>] <span class="keyword">JOIN</span> dept d</div><div class="line"><span class="keyword">USING</span> (deptno);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-2-不等值连接-THETA-JOIN"><a href="#2-2-不等值连接-THETA-JOIN" class="headerlink" title="2.2 不等值连接 (THETA  JOIN)"></a>2.2 不等值连接 (THETA  JOIN)</h3><p>  很好理解，即在关联条件中使用等号以外的运算符，来比较左右两个关联字段或者值。这些运算符有：<code>&gt;, &lt;, &gt;=, &lt;=, !=, &lt;&gt;</code>。</p>
+<ul>
+<li>范例：查询员工的编号、姓名、工作、工资及其工资等级。</li>
+<li><p>分析：此时我们需要emp表和salgrade表，员工的工资等级 –&gt;  工资大于某等级的最低工资  并且小于该等级的最高工资。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> e.empno, e.ename, e.job, e.sal, s.grade</div><div class="line"><span class="keyword">FROM</span> emp e, salgrade s</div><div class="line"><span class="keyword">WHERE</span> e.sal &gt; s.losal <span class="keyword">AND</span> e.sal &lt; s.hisal;</div><div class="line"><span class="comment">-- 此处关联条件也可用BETWEEN AND</span></div></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<p><img src="https://i.imgsafe.org/8a2b83e09a.jpg" alt=""></p>
+</li>
+</ul>
+<h3 id="2-3-自然连接-NATURAL-JOIN"><a href="#2-3-自然连接-NATURAL-JOIN" class="headerlink" title="2.3 自然连接(NATURAL JOIN)"></a>2.3 自然连接(NATURAL JOIN)</h3><p>自然连接是一种特殊的等值连接。在自然连接的语法中不需要出现关联条件的字段名，因为连接的两张表必须有相同的字段名（字段名和数据类型都相同）。使用自然连接所得的查询结果中，两表中名称相同的列只出现一次；不可使用ON关键字。</p>
+<ul>
+<li>语法：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">Attribute</span>  </div><div class="line"><span class="keyword">FROM</span> table1 <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> table2;</div></pre></td></tr></table></figure>
+<ul>
+<li>将emp表和dept表自然连接进行查询：</li>
+</ul>
+<p><img src="https://i.imgsafe.org/8aa40a9e73.jpg" alt=""></p>
+<p>由上图可以看出emp表和dept表中共有的字段DEPTNO只出现了一次，且位于第一列。</p>
+<h2 id="3-外连接"><a href="#3-外连接" class="headerlink" title="3. 外连接"></a>3. 外连接</h2><p>外连接可以实现让等值判断左右两边因不满足查询条件而未显示的数据显示出来，分别是左外连接，右外连接和全外连接，它们的不同点是：</p>
+<ul>
+<li>左外连接还返回左表中不符合关联条件单符合查询条件的数据行。</li>
+<li>右外连接还返回右表中不符合关联条件单符合查询条件的数据行。</li>
+<li>全外连接其实是左外连接和右外连接查询结果的合集（每条记录只出现一词，并不会重复出现）。</li>
+</ul>
+<p>在语法中OUTER关键字可以省略。</p>
+<h3 id="3-1-左外连接-LEFT-OUTER-JOIN"><a href="#3-1-左外连接-LEFT-OUTER-JOIN" class="headerlink" title="3.1 左外连接 (LEFT OUTER JOIN)"></a>3.1 左外连接 (LEFT OUTER JOIN)</h3><p>为了方便理解，我向emp表中添加了一条ename为HANS，empno为8000记录，其他字段数据均没有。现在emp表结构如下图所示：</p>
+<p><img src="https://i.imgsafe.org/8b386608b5.jpg" alt=""></p>
+<ul>
+<li>范例：查询所有工作人员的信息及其所在部门的名称。</li>
+<li>语法：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Syntax 1</span></div><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> emp, dept</div><div class="line"><span class="keyword">WHERE</span> emp.deptno = dept.deptno(+); <span class="comment">-- 左外连接，+号在右表</span></div><div class="line"></div><div class="line"><span class="comment">-- Syntax 2</span></div><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> emp <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> dept</div><div class="line"><span class="keyword">ON</span> emp.deptno = dept.deptno; <span class="comment">-- 使用的是ON关键字</span></div></pre></td></tr></table></figure>
+<p>查询结果：</p>
+<p><img src="https://i.imgsafe.org/8b47154fe2.jpg" alt=""></p>
+<p>HANS不属于任何部门，但是仍然显示。</p>
+<h3 id="3-1-左外连接-RIGHT-OUTER-JOIN"><a href="#3-1-左外连接-RIGHT-OUTER-JOIN" class="headerlink" title="3.1 左外连接 (RIGHT OUTER JOIN)"></a>3.1 左外连接 (RIGHT OUTER JOIN)</h3><ul>
+<li>范例：查询所有部门的信息，以及各部门所拥有的工作人员信息。</li>
+<li>语法：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Syntax 1</span></div><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> emp <span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> dept</div><div class="line"><span class="keyword">ON</span> emp.deptno = dept.deptno;</div><div class="line"></div><div class="line"><span class="comment">-- Syntax 2</span></div><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> emp, dept</div><div class="line"><span class="keyword">WHERE</span> emp.deptno(+) = dept.deptno; <span class="comment">-- 右外连接， +号在左表</span></div></pre></td></tr></table></figure>
+<p>查询结果：</p>
+<p><img src="https://i.imgsafe.org/8b387b7417.jpg" alt=""></p>
+<p>从查询结果可以看出，40部门没有任何工作人员，但仍然显示。</p>
+<h3 id="3-2-全外连接-FULL-OUTER-JOIN"><a href="#3-2-全外连接-FULL-OUTER-JOIN" class="headerlink" title="3.2 全外连接 (FULL OUTER JOIN)"></a>3.2 全外连接 (FULL OUTER JOIN)</h3><p>直接将emp表和dept表进行全外连接查询：</p>
+<ul>
+<li>语法：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> emp <span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> dept</div><div class="line"><span class="keyword">ON</span> emp.deptno = dept.deptno;</div></pre></td></tr></table></figure>
+<p>查询结果：</p>
+<p><img src="https://i.imgsafe.org/8b38e03788.jpg" alt=""></p>
+<p>没有部门的HANS和没有成员的40部门都显示出来了。</p>
+<hr>
+<p>欢迎交流与指正。</p>
+<p><strong>注：此文章为本人原创，转载时请务必注明出处。</strong></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/07/Join-in-SQL-SQL中的连接（交叉连接，内连接，外连接）/" class="archive-article-date">
+  	<time datetime="2016-11-07T12:45:27.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-07</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL，Join/">SQL，Join</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/DatenBank/">DatenBank</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Dual Table in Oracle / Dual表在Oracle中的应用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 YiDaoJ
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SQL，Join/" style="font-size: 10px;">SQL，Join</a> <a href="/tags/练习/" style="font-size: 10px;">练习</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
