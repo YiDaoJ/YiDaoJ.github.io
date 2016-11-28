@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Country & City selection</title>
+
+	<style type="text/css">
+
+		h1 {
+			margin: 30px 40px;
+		}
+
+		div {
+			margin-left: 50px;
+		}
+
+		select {
+			height: 30px;
+			margin-right: 10px;
+		}
+		
+		p {
+			margin-left: 50px;
+			margin-top: 20px;
+			font-size: 1.2em;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		var country = ["China", "Germany", "Japan", "US"];
+
+		// 2D-Array
+		var city = [
+			["Beijing", "Shanghai", "Shenzhen", "Chongqing", "Tianjin"],
+			["Berlin", "Cologne", "Munich", "Stuttgart", "Dortmund"],
+			["Tokyo", "Kyoto", "Osaka", "Yokohama"],
+			["New York", "Chicago", "Los Angeles", "Houston"]
+		];
+
+
+
+		window.onload = function(){
+			createCountry();
+			document.getElementById("country").onchange = createCity;
+		};
+
+
+		function createCountry(){
+
+			var land = document.getElementById("country");
+
+			for(var i in country){
+				var op = new Option(country[i], country[i]);	// param1: text, param2:value
+				
+				land.options.add(op);
+			}			
+		}
+
+		function createCity(){
+			var cityIndex = document.getElementById("country").selectedIndex;	
+			var stadt = document.getElementById("city");
+			// 0-4, 0: "Selecte your country"
+			// 1-4: China, Germany, Japan, US
+			console.log(cityIndex);
+
+			stadt.options.length = 0;	 	// 将city原有的所有选项移除
+
+			for(var i in city[cityIndex-1]){				
+				var op = new Option(city[cityIndex-1][i], city[cityIndex-1][i]);
+				stadt.options.add(op);
+			}
+		}
+
+		function sendResult(){
+			var country = document.getElementById("country").value;
+			var city = document.getElementById("city").value;
+			var message = "You have chosen: " + country + ", " + city + ".";
+
+			document.getElementById("result").innerHTML = message;
+
+		}
+
+
+
+
+	</script>
+
+</head>
+<body>
+	<h1>Select your country and city</h1>
+	
+	<div>
+		<select id="country">
+			<option> ===== Select your country ===== </option>
+		</select>
+
+		<select id="city" onchange="sendResult()"> 
+			<option>=== City === </option>
+		</select>
+	</div>
+
+	<p id="result"></p>
+</body>
+</html>
