@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SQL," />
+  <meta name="keywords" content="JavaScript,Sum-Up," />
 
 
 
@@ -84,16 +84,40 @@
 
 
 
-<meta name="description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
+<meta name="description" content="setInterval()可以使指定任务在每间隔的指定时间后重复执行。
+其语法如下：
+12setInterval(code, interval);setInterval(func, interval);
+
+code参数是想要反复执行的代码，但必须以字符串形式出现；
+func参数是想要反复调用的函数；
+interval是间隔时间，此处的单位为毫秒。
+
+实际上，第一种语法中以字符串形式的代码作为参数是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dual Table in Oracle / Dual表在Oracle中的应用">
-<meta property="og:url" content="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/index.html">
+<meta property="og:title" content="JavaScript中使用setInterval()时调用其他函数的写法小结">
+<meta property="og:url" content="http://yoursite.com/2016/12/09/JavaScript中使用setInterval-时调用其他函数的写法小结/index.html">
 <meta property="og:site_name" content="YiDaoJ's Blog">
-<meta property="og:description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
-<meta property="og:updated_time" content="2016-12-09T20:39:18.335Z">
+<meta property="og:description" content="setInterval()可以使指定任务在每间隔的指定时间后重复执行。
+其语法如下：
+12setInterval(code, interval);setInterval(func, interval);
+
+code参数是想要反复执行的代码，但必须以字符串形式出现；
+func参数是想要反复调用的函数；
+interval是间隔时间，此处的单位为毫秒。
+
+实际上，第一种语法中以字符串形式的代码作为参数是">
+<meta property="og:updated_time" content="2016-12-10T12:59:42.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dual Table in Oracle / Dual表在Oracle中的应用">
-<meta name="twitter:description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
+<meta name="twitter:title" content="JavaScript中使用setInterval()时调用其他函数的写法小结">
+<meta name="twitter:description" content="setInterval()可以使指定任务在每间隔的指定时间后重复执行。
+其语法如下：
+12setInterval(code, interval);setInterval(func, interval);
+
+code参数是想要反复执行的代码，但必须以字符串形式出现；
+func参数是想要反复调用的函数；
+interval是间隔时间，此处的单位为毫秒。
+
+实际上，第一种语法中以字符串形式的代码作为参数是">
 
 
 
@@ -121,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/09/JavaScript中使用setInterval-时调用其他函数的写法小结/"/>
 
 
 
 
 
-  <title> Dual Table in Oracle / Dual表在Oracle中的应用 | YiDaoJ's Blog </title>
+  <title> JavaScript中使用setInterval()时调用其他函数的写法小结 | YiDaoJ's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -248,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/09/JavaScript中使用setInterval-时调用其他函数的写法小结/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="YiDaoJ">
@@ -272,7 +296,7 @@
             
             
               
-                Dual Table in Oracle / Dual表在Oracle中的应用
+                JavaScript中使用setInterval()时调用其他函数的写法小结
               
             
           </h1>
@@ -285,8 +309,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-28T18:51:35+02:00">
-                2016-10-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-09T21:49:54+01:00">
+                2016-12-09
               </time>
             
 
@@ -304,8 +328,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Datenbank/" itemprop="url" rel="index">
-                    <span itemprop="name">Datenbank</span>
+                  <a href="/categories/Frond-End/" itemprop="url" rel="index">
+                    <span itemprop="name">Frond-End</span>
                   </a>
                 </span>
 
@@ -339,23 +363,28 @@
       
 
       
-        <blockquote>
-<p>DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user <strong>SYS</strong> but is accessible by the name DUAL to all users.<br>It has one column, DUMMY, defined to be VARCHAR2(1), and contains one row with a value X. </p>
-</blockquote>
-<p>Dual在Oracle中是一个虚拟表，它只有一个类型为VARCHAR2的子段，即DUMMY，值为X。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
-<div><br>DU<br>—–<br>X<br></div>
-
-<blockquote>
-<p>Selecting from the DUAL table is useful for computing a constant expression with the SELECT statement. Because DUAL has only one row, the constant is returned only once. Alternatively, you can select a constant, pseudocolumn, or expression from any table, but the value will be returned as many times as there are rows in the table. Please refer to “SQL Functions” for many examples of selecting a constant value from DUAL.</p>
-</blockquote>
-<p>此外，DUAL表还有许多其他的用途：<br><strong>1. 查看当前用户</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">user</span> <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
-<div><br>USER<br>——<br>SCOTT<br></div>
-
-<p><strong>2. 调用系统函数，比如日期、随机获取数字等</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 获取当前系统时间</span></div><div class="line"><span class="keyword">SELECT</span> <span class="keyword">sysdate</span> <span class="keyword">FROM</span> DUAL;</div><div class="line"><span class="comment">-- 获取当前locale</span></div><div class="line"><span class="keyword">SELECT</span> SYS_CONTEXT(<span class="string">'USERENV'</span>,<span class="string">'LANGUAGE'</span>) <span class="keyword">FROM</span> DUAL;</div><div class="line"><span class="comment">-- 获取随机数字</span></div><div class="line"><span class="keyword">SELECT</span> dbms_tandom.random <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
-<p><strong>3. 进行数学运算</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="number">3</span>+<span class="number">6</span> <span class="keyword">FROM</span> DUAL;</div><div class="line"><span class="keyword">SELECT</span> <span class="number">5</span>*<span class="number">6.5</span> <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
-<p><strong>4. 查看序列值</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 创建一个从1开始，递增1的序列</span></div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">sequence</span> abc <span class="keyword">increment</span> <span class="keyword">by</span> <span class="number">1</span> <span class="keyword">start</span> <span class="keyword">with</span> <span class="number">1</span>;</div><div class="line"><span class="comment">-- 获取序列abc下一个值</span></div><div class="line"><span class="keyword">SELECT</span> abc.nextval <span class="keyword">FROM</span> DUAL; <span class="comment">-- 得到1</span></div><div class="line"><span class="keyword">SELECT</span> abc.nextval <span class="keyword">FROM</span> DUAL; <span class="comment">-- 重复执行，得到2</span></div><div class="line"><span class="comment">-- 获取序列abc当前值</span></div><div class="line"><span class="keyword">SELECT</span> abc.currval <span class="keyword">FROM</span> DUAL; <span class="comment">-- 得到2</span></div></pre></td></tr></table></figure></p>
-<p>注：序列建立后，<code>sequence.currval</code>一定要在<code>next.currval</code>后面执行；如果序列建立后就获取<code>sequence.currval</code>会报错：<code>sequence ABC.CURRVAL is not yet defined in this session</code>。</p>
-<p>文中引用出自：<a href="https://docs.oracle.com/cd/B19306_01/server.102/b14200/queries009.htm" target="_blank" rel="external">https://docs.oracle.com/cd/B19306_01/server.102/b14200/queries009.htm</a></p>
+        <p><code>setInterval()</code>可以使指定任务在每间隔的指定时间后重复执行。</p>
+<p>其语法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">setInterval(code, interval);</div><div class="line">setInterval(func, interval);</div></pre></td></tr></table></figure>
+<ul>
+<li><code>code</code>参数是想要反复执行的代码，但必须<strong>以字符串形式</strong>出现；</li>
+<li><code>func</code>参数是想要反复调用的函数；</li>
+<li><code>interval</code>是间隔时间，此处的单位为毫秒。</li>
+</ul>
+<p>实际上，第一种语法中以字符串形式的代码作为参数是不推荐的，原因同<code>eval()</code>。</p>
+<p>问题来了，使用第二种语法时，所调用的函数是否有参数、函数作用域不同，调用这些函数的写法也有不同。</p>
+<p><strong>1. 调用作用域为全局且无参的函数</strong></p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showTime</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  <span class="built_in">console</span>.log(now.toLocaleString());</div><div class="line">&#125;</div><div class="line"></div><div class="line">setInterval(showTime, <span class="number">1000</span>);</div></pre></td></tr></table></figure>
+<p>   执行上面的代码，每隔一秒钟会在浏览器的控制台显示当前的日期和时间。<code>setInterval()</code>调用无参函数时，直接在指定位置写函数名即可，不要在函数名后加括号<code>()</code>。   ​</p>
+<p><strong>2. 调用作用域为全局但含参的函数</strong></p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">increment</span>(<span class="params">b</span>) </span>&#123;			</div><div class="line">  <span class="built_in">console</span>.log(a += b);			</div><div class="line">&#125;</div><div class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;increment(<span class="number">5</span>);&#125;, <span class="number">1000</span>);</div></pre></td></tr></table></figure>
+<p>   上面代码的功能是每隔一秒在控制台输出参数a每秒递增b的结果。此时函数<code>increment(b)</code>虽然作用域为全局，但如果在<code>satInterval()</code>调用时写成<code>setInterval(increment(5), 1000);</code>，那么结果只会在控制台显示一次，也就是说函数<code>increment(b)</code>只执行了一次，没有反复执行。<br>   所以，如果想在<code>setInterval()</code>中调用含参函数，就要把调用的函数写在匿名函数<code>function(){}</code>中。</p>
+<p><strong>3. 调用局部作用域的函数</strong></p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Car = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.rentPrice = <span class="number">10</span>;</div><div class="line">  <span class="keyword">this</span>.calculate = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.rentPrice += <span class="number">6</span>);</div><div class="line">  &#125;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> car1 = <span class="keyword">new</span> Car();</div><div class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;car1.calculate();&#125;, <span class="number">1000</span>);</div></pre></td></tr></table></figure>
+<p>   例如在租车时，价格会随着用的时间而增多，例子不是很恰当，理解用意即可。<br>   在<code>setInterval()</code>中调用<code>Car</code>中的函数时<code>calculate()</code>，也要使用<code>function(){实例对象.函数名()}</code>的写法；不可直接调用实例对象的内部函数，否则该函数只会执行一次。</p>
+<hr>
+<p>欢迎交流。</p>
+<p><strong>注：此文章为本人原创，转载时烦请必注明出处。</strong></p>
 
       
     </div>
@@ -379,7 +408,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SQL/" rel="tag"># SQL</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/Sum-Up/" rel="tag"># Sum-Up</a>
           
         </div>
       
@@ -388,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/18/AI练习-矢量扁平地图-Flat-Style-Vector-Map-in-Adobe-Illustrator/" rel="next" title="AI练习-矢量扁平地图/Flat Style Vector Map in Adobe Illustrator">
-                <i class="fa fa-chevron-left"></i> AI练习-矢量扁平地图/Flat Style Vector Map in Adobe Illustrator
+              <a href="/2016/11/28/JavaScript实现select二级联动下拉菜单/" rel="next" title="JavaScript实现select二级联动下拉菜单">
+                <i class="fa fa-chevron-left"></i> JavaScript实现select二级联动下拉菜单
               </a>
             
           </div>
@@ -397,10 +428,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/07/Join-in-SQL-SQL中的连接（交叉连接，内连接，外连接）/" rel="prev" title="Join in SQL / SQL中的连接（交叉连接，内连接，外连接）">
-                Join in SQL / SQL中的连接（交叉连接，内连接，外连接） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
