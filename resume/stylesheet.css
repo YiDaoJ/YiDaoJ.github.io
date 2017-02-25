@@ -1,6 +1,7 @@
 body {
 	font-family: 'Raleway', sans-serif;
 	margin:auto;
+	overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -274,7 +275,7 @@ td {
 
 @media (max-width: 768px) {
 	#portfolio.cover {
-	  height: 220vh;
+	  height: 1800px;
 	}
 
 	#portfolio div {
