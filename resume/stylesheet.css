@@ -115,8 +115,16 @@ h1 {
 	font-size: 14px;
 }
 
+.projekt a:visited {
+	text-decoration: none;
+}
+
 .projekt a:hover {
 	background-color:#213158;
+	text-decoration: none;
+}
+
+.projekt a:active {
 	text-decoration: none;
 }
 
@@ -232,14 +240,6 @@ td {
 #contact a:hover{
 	text-decoration: none;
 	color: #193240;
-}
-
-a:visited {
-	text-decoration: none;
-}
-
-a:activ {
-	text-decoration: none;
 }
 
 
