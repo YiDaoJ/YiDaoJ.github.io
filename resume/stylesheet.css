@@ -1,0 +1,298 @@
+body {
+	font-family: 'Raleway', sans-serif;
+	margin:auto;
+}
+
+h1, h2, h3 {
+	font-family: 'Raleway', sans-serif;
+	color: #E5EFF5;
+	/*text-shadow: 2px 2px 2px #193240;*/
+}
+
+h1 {
+	font-weight: bolder;
+}
+
+.navbar {
+  height: 70px;
+  background-color: transparent;
+  background: transparent;
+  border: none;
+  z-index: 20;
+  margin-bottom: 0;
+}
+
+.cover {
+	position: relative;
+	height: 100vh;
+}
+
+#main {
+	font-size: 1.5em;
+	background-color: #0164AF;
+}
+
+#main div {
+	position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#circle {
+	margin: 0 auto;
+	margin-bottom: -50px;
+	height: 180px;
+	width: 180px;
+	border-radius: 100%;
+	background-color: #0470B8;
+}
+
+#main img {
+	height: 160px;
+	width: 160px;
+	border-radius: 100%;
+	margin: 10px;
+}
+
+#education {
+	background-color: #59A0CF;
+}
+
+#education div {
+	position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);	
+}
+
+#education h1 {
+	/*padding-top: 80px;*/
+	margin-top: 50x;
+	margin-bottom: 60px;
+}
+
+#education li {
+	width: 50%;
+	margin:0 auto;
+	min-width: 400px;
+	list-style-type:none;
+	padding-bottom: 20px;
+	font-size: 1.3em;
+	font-weight: bold;
+	color: #193240;
+}
+
+.study {
+	padding-left: 150px;
+}
+
+#portfolio {
+	padding-top: 2%;
+	background-color: #0470B8;
+}
+
+.projekt {
+	position: relative;
+	left:15%;
+	padding-top: 15px;
+}
+
+.projekt a {
+	display: inline-block;
+	height: 30px;
+	width: 95px;
+	padding-top: 3px;
+	text-align: center;
+	color: white;
+	border:solid 1px #213158;
+	border-radius: 7px;
+	padding-top: 5px;
+	margin-right: 6px;
+	margin-bottom: 5px;
+	font-size: 14px;
+}
+
+.projekt a:hover {
+	background-color:#213158;
+	text-decoration: none;
+}
+
+#portfolio p {
+	font-size: 15px;
+}
+
+#portfolio img {
+	display: block;
+	width:200px;
+	height: 150px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px;
+	margin-bottom: 15px;
+}
+
+#more {
+	width: 150px;
+	height: 100px;
+	top: 80%;
+	margin:auto;
+	padding-left: 40px;
+}
+
+#more a {
+	color: #BDDAED;
+	font-size: 1.3em;
+	text-decoration: none;
+}
+
+#more a:hover {
+	color: #213158;
+}
+
+
+#skill {
+	background-color: #79BBF5;
+}
+
+#skill h1 {
+	margin-bottom: 80px;
+	margin-top: -50px;
+}
+
+#skill .skilltags {
+	position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.tag {
+	margin-top: 20px;
+}
+
+#skill span {
+	padding: 3px 8px 3px 8px;
+	color: white;
+	font-size: 18px;
+	border-radius: 5px;
+	margin-right: 10px;
+	
+}
+
+.bekannt {
+	background-color:#0164AF;
+}
+
+.kennen {
+	background-color:#4B94F8;
+}
+
+.fremd {
+	background-color:#BDDAED;
+}
+
+#contact {
+	background-color: #88CCE8;
+}
+
+#contact h1 {
+	margin-bottom: 70px;
+	margin-top: -50px;
+}
+
+#contact div {
+	position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+	color: #0164AF;
+}
+
+#contact div table {
+	top: 50%;
+	left: 50%;
+	margin: auto ;
+}
+
+td {
+	height: 50px;
+	width: 100px;
+	font-size: 1.5em;	
+}
+
+#contact a {
+	text-decoration: none;
+	color: #0164AF;
+}
+
+#contact a:hover{
+	text-decoration: none;
+	color: #193240;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:activ {
+	text-decoration: none;
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+	#portfolio.cover {
+	  height: 220vh;
+	}
+	
+	#portfolio div {
+		left: 30%;
+	}
+
+	#portfolio img {
+		display: block;
+		width:320px;
+		height: 240px;
+		border-radius: 10px;
+		box-shadow: 5px 5px 5px;
+		margin-bottom: 15px;
+	}
+
+	#education h1 {
+		margin-top: 5%;
+	}
+
+	#education.cover {
+		height: 110vh;
+	}
+
+
+}
+
+@media (max-width: 768px) {
+	#portfolio.cover {
+	  height: 220vh;
+	}
+
+	#portfolio div {
+		left: 20%;
+	}
+
+	#portfolio img {
+		display: block;
+		width:320px;
+		height: 240px;
+		border-radius: 10px;
+		box-shadow: 5px 5px 5px;
+		margin-bottom: 15px;
+	}
+
+	#education.cover {
+		height: 110vh;
+	}
+
+
+}
