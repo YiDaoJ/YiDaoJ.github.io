@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SQL," />
+  <meta name="keywords" content="CSS,Sum-Up," />
 
 
 
@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
+<meta name="description" content="So… erkläre ich über 2D Skew und Kombination der Transformation weiter. :p
+2D SkewÄhnlich wie translate() und scale(),  skew() kann auch mit  skewX() und skewY() benutzt, um das Verzerren in horizonta">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dual Table in Oracle / Dual表在Oracle中的应用">
-<meta property="og:url" content="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/index.html">
+<meta property="og:title" content="CSS transform (2)">
+<meta property="og:url" content="http://yoursite.com/2017/03/02/CSS-transform-2/index.html">
 <meta property="og:site_name" content="YiDaoJ's Blog">
-<meta property="og:description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
-<meta property="og:updated_time" content="2016-12-09T20:39:18.335Z">
+<meta property="og:description" content="So… erkläre ich über 2D Skew und Kombination der Transformation weiter. :p
+2D SkewÄhnlich wie translate() und scale(),  skew() kann auch mit  skewX() und skewY() benutzt, um das Verzerren in horizonta">
+<meta property="og:updated_time" content="2017-03-04T13:55:30.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dual Table in Oracle / Dual表在Oracle中的应用">
-<meta name="twitter:description" content="DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user SYS but is accessible by the name DUAL to all users.It has one column, DUMMY">
+<meta name="twitter:title" content="CSS transform (2)">
+<meta name="twitter:description" content="So… erkläre ich über 2D Skew und Kombination der Transformation weiter. :p
+2D SkewÄhnlich wie translate() und scale(),  skew() kann auch mit  skewX() und skewY() benutzt, um das Verzerren in horizonta">
 
 
 
@@ -121,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/02/CSS-transform-2/"/>
 
 
 
 
 
-  <title> Dual Table in Oracle / Dual表在Oracle中的应用 | YiDaoJ's Blog </title>
+  <title> CSS transform (2) | YiDaoJ's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -248,7 +251,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/CSS-transform-2/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="YiDaoJ">
@@ -272,7 +275,7 @@
             
             
               
-                Dual Table in Oracle / Dual表在Oracle中的应用
+                CSS transform (2)
               
             
           </h1>
@@ -285,8 +288,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-28T18:51:35+02:00">
-                2016-10-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-02T22:13:34+01:00">
+                2017-03-02
               </time>
             
 
@@ -304,8 +307,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Datenbank/" itemprop="url" rel="index">
-                    <span itemprop="name">Datenbank</span>
+                  <a href="/categories/Frond-End/" itemprop="url" rel="index">
+                    <span itemprop="name">Frond-End</span>
                   </a>
                 </span>
 
@@ -319,8 +322,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/" itemprop="commentCount"></span>
+                <a href="/2017/03/02/CSS-transform-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/02/CSS-transform-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -346,23 +349,23 @@
       
 
       
-        <blockquote>
-<p>DUAL is a table automatically created by Oracle Database along with the data dictionary. DUAL is in the schema of the user <strong>SYS</strong> but is accessible by the name DUAL to all users.<br>It has one column, DUMMY, defined to be VARCHAR2(1), and contains one row with a value X. </p>
-</blockquote>
-<p>Dual在Oracle中是一个虚拟表，它只有一个类型为VARCHAR2的子段，即DUMMY，值为X。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
-<div><br>DU<br>—–<br>X<br></div>
-
-<blockquote>
-<p>Selecting from the DUAL table is useful for computing a constant expression with the SELECT statement. Because DUAL has only one row, the constant is returned only once. Alternatively, you can select a constant, pseudocolumn, or expression from any table, but the value will be returned as many times as there are rows in the table. Please refer to “SQL Functions” for many examples of selecting a constant value from DUAL.</p>
-</blockquote>
-<p>此外，DUAL表还有许多其他的用途：<br><strong>1. 查看当前用户</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">user</span> <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
-<div><br>USER<br>——<br>SCOTT<br></div>
-
-<p><strong>2. 调用系统函数，比如日期、随机获取数字等</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 获取当前系统时间</span></div><div class="line"><span class="keyword">SELECT</span> <span class="keyword">sysdate</span> <span class="keyword">FROM</span> DUAL;</div><div class="line"><span class="comment">-- 获取当前locale</span></div><div class="line"><span class="keyword">SELECT</span> SYS_CONTEXT(<span class="string">'USERENV'</span>,<span class="string">'LANGUAGE'</span>) <span class="keyword">FROM</span> DUAL;</div><div class="line"><span class="comment">-- 获取随机数字</span></div><div class="line"><span class="keyword">SELECT</span> dbms_tandom.random <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
-<p><strong>3. 进行数学运算</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="number">3</span>+<span class="number">6</span> <span class="keyword">FROM</span> DUAL;</div><div class="line"><span class="keyword">SELECT</span> <span class="number">5</span>*<span class="number">6.5</span> <span class="keyword">FROM</span> DUAL;</div></pre></td></tr></table></figure></p>
-<p><strong>4. 查看序列值</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 创建一个从1开始，递增1的序列</span></div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">sequence</span> abc <span class="keyword">increment</span> <span class="keyword">by</span> <span class="number">1</span> <span class="keyword">start</span> <span class="keyword">with</span> <span class="number">1</span>;</div><div class="line"><span class="comment">-- 获取序列abc下一个值</span></div><div class="line"><span class="keyword">SELECT</span> abc.nextval <span class="keyword">FROM</span> DUAL; <span class="comment">-- 得到1</span></div><div class="line"><span class="keyword">SELECT</span> abc.nextval <span class="keyword">FROM</span> DUAL; <span class="comment">-- 重复执行，得到2</span></div><div class="line"><span class="comment">-- 获取序列abc当前值</span></div><div class="line"><span class="keyword">SELECT</span> abc.currval <span class="keyword">FROM</span> DUAL; <span class="comment">-- 得到2</span></div></pre></td></tr></table></figure></p>
-<p>注：序列建立后，<code>sequence.currval</code>一定要在<code>next.currval</code>后面执行；如果序列建立后就获取<code>sequence.currval</code>会报错：<code>sequence ABC.CURRVAL is not yet defined in this session</code>。</p>
-<p>文中引用出自：<a href="https://docs.oracle.com/cd/B19306_01/server.102/b14200/queries009.htm" target="_blank" rel="external">https://docs.oracle.com/cd/B19306_01/server.102/b14200/queries009.htm</a></p>
+        <p>So… erkläre ich über <strong>2D Skew</strong> und <strong>Kombination der Transformation</strong> weiter. :p</p>
+<h2 id="2D-Skew"><a href="#2D-Skew" class="headerlink" title="2D Skew"></a>2D Skew</h2><p>Ähnlich wie <code>translate()</code> und <code>scale()</code>,  <code>skew()</code> kann auch mit  <code>skewX()</code> und <code>skewY()</code> benutzt, um das Verzerren in horizontaler und vertikaler Richtung zu ermöglichen. </p>
+<ul>
+<li>Die Einheit zu <code>skew()</code> ist auch <em>degree</em>.</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box1</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skewX</span>(30deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box2</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skewX</span>(-20deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box3</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skewY</span>(40deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box4</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skewY</span>(-20deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box5</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skew</span>(20deg, 20deg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>Demo:</strong></p>
+<iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/zmpjtvvf/embedded/result,html,css/light" frameborder="0" allowfullscreen></iframe>
+<h2 id="Kombination-der-Transformation"><a href="#Kombination-der-Transformation" class="headerlink" title="Kombination der Transformation"></a>Kombination der Transformation</h2><p>Es ist üblich, dass mehrere transform-Eigenschaften auf einmal benutzt werden, indem die Eigenschaften mit Werten nacheinander codiert werden.</p>
+<p><strong>Demo:</strong></p>
+<iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/2aydv87o/embedded/result,html,css/light" frameborder="0" allowfullscreen></iframe>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box1</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(.5) <span class="built_in">rotate</span>(45deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box2</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.75) <span class="built_in">skewX</span>(20deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box3</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(80px) <span class="built_in">scaleY</span>(.6) <span class="built_in">rotate</span>(45deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box4</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skew</span>(20deg, 20deg) <span class="built_in">scale</span>(.5, .5);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Alle transform-Property werden in einer Anweisung/Deklaration geschrieben,  endet mit eine Semikolon.</li>
+<li>Verbindung der Eigenschaften mit leerzeichen, sondern nicht Komma.</li>
+<li>Wenn mehrere transform-Anweisungen deklariert werden, wrid nun die letzte realisiert. Alle vorherige gleichnamige (hier: transform) Deklarationen lassen sich verdecken.</li>
+</ul>
 
       
     </div>
@@ -386,7 +389,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SQL/" rel="tag"># SQL</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/Sum-Up/" rel="tag"># Sum-Up</a>
           
         </div>
       
@@ -395,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/18/AI练习-矢量扁平地图-Flat-Style-Vector-Map-in-Adobe-Illustrator/" rel="next" title="AI练习-矢量扁平地图/Flat Style Vector Map in Adobe Illustrator">
-                <i class="fa fa-chevron-left"></i> AI练习-矢量扁平地图/Flat Style Vector Map in Adobe Illustrator
+              <a href="/2017/03/01/CSS-transform (1)/" rel="next" title="CSS transform (1)">
+                <i class="fa fa-chevron-left"></i> CSS transform (1)
               </a>
             
           </div>
@@ -404,10 +409,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/07/Join-in-SQL-SQL中的连接（交叉连接，内连接，外连接）/" rel="prev" title="Join in SQL / SQL中的连接（交叉连接，内连接，外连接）">
-                Join in SQL / SQL中的连接（交叉连接，内连接，外连接） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -461,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://i.imgsafe.org/af774a292e.jpg"
@@ -526,6 +536,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2D-Skew"><span class="nav-number">1.</span> <span class="nav-text">2D Skew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kombination-der-Transformation"><span class="nav-number">2.</span> <span class="nav-text">Kombination der Transformation</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -644,9 +670,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'yidaoj';
-      var disqus_identifier = '2016/10/28/Dual-Table-in-Oracle-Dual表在Oracle中的应用/';
+      var disqus_identifier = '2017/03/02/CSS-transform-2/';
 
-      var disqus_title = "Dual Table in Oracle / Dual表在Oracle中的应用";
+      var disqus_title = "CSS transform (2)";
 
 
       function run_disqus_script(disqus_script) {
