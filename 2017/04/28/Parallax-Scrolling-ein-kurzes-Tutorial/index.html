@@ -1,0 +1,752 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS,Sum-Up,Parallax Scrolling," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="TechnologiekompetenzWas ist “Parallax Scrolling”?Unten Parallax Scrolling versteht man die dreidimensionale Bewegungseffekte, bei dem mehrere verschiedene Ebenen mit unterschiedlichen Geschwindigkeite">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Parallax Scrolling - ein kurzes Tutorial">
+<meta property="og:url" content="http://yoursite.com/2017/04/28/Parallax-Scrolling-ein-kurzes-Tutorial/index.html">
+<meta property="og:site_name" content="YiDaoJ's Blog">
+<meta property="og:description" content="TechnologiekompetenzWas ist “Parallax Scrolling”?Unten Parallax Scrolling versteht man die dreidimensionale Bewegungseffekte, bei dem mehrere verschiedene Ebenen mit unterschiedlichen Geschwindigkeite">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/16/Parallax-scroll-example.gif">
+<meta property="og:image" content="https://picload.org/image/rcllpwdw/abb2c.png">
+<meta property="og:image" content="https://picload.org/image/rcllwodi/abb3.png">
+<meta property="og:image" content="https://picload.org/image/rclcwwil/abb4b.jpg">
+<meta property="og:image" content="https://picload.org/image/rclidwla/abb5.jpg">
+<meta property="og:updated_time" content="2017-04-28T08:32:00.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Parallax Scrolling - ein kurzes Tutorial">
+<meta name="twitter:description" content="TechnologiekompetenzWas ist “Parallax Scrolling”?Unten Parallax Scrolling versteht man die dreidimensionale Bewegungseffekte, bei dem mehrere verschiedene Ebenen mit unterschiedlichen Geschwindigkeite">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/1/16/Parallax-scroll-example.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/28/Parallax-Scrolling-ein-kurzes-Tutorial/"/>
+
+
+
+
+
+  <title> Parallax Scrolling - ein kurzes Tutorial | YiDaoJ's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">YiDaoJ's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/Parallax-Scrolling-ein-kurzes-Tutorial/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="YiDaoJ">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://i.imgsafe.org/af774a292e.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="YiDaoJ's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="YiDaoJ's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Parallax Scrolling - ein kurzes Tutorial
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-28T09:46:17+02:00">
+                2017-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Frond-End/" itemprop="url" rel="index">
+                    <span itemprop="name">Frond-End</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2017/04/28/Parallax-Scrolling-ein-kurzes-Tutorial/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/28/Parallax-Scrolling-ein-kurzes-Tutorial/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Technologiekompetenz"><a href="#Technologiekompetenz" class="headerlink" title="Technologiekompetenz"></a>Technologiekompetenz</h2><h3 id="Was-ist-“Parallax-Scrolling”"><a href="#Was-ist-“Parallax-Scrolling”" class="headerlink" title="Was ist “Parallax Scrolling”?"></a>Was ist “Parallax Scrolling”?</h3><p>Unten Parallax Scrolling versteht man die dreidimensionale Bewegungseffekte, bei dem mehrere verschiedene Ebenen mit unterschiedlichen Geschwindigkeiten bewegen, wenn die Webseite scrollt. </p>
+<p>Parallax Scrolling basiert auf dem Begriff <em>Bewegungsparallaxe</em>. </p>
+<blockquote>
+<p>Unter Bewegungsparallaxe versteht man in der Wahrnehmungspsychologie den Effekt, der sich optisch ergibt, wenn verschiedene Objekte unterschiedlich voneinander entfernt in einer Landschaft verteilt sind und sich der Beobachter parallel zu diesen Objekten seitlich fortbewegt und dabei in Richtung Horizont blickt. </p>
+<p>—- <a href="https://de.wikipedia.org/wiki/Bewegungsparallaxe" target="_blank" rel="external">Wikipedia - Bewegungsparallaxe</a></p>
+</blockquote>
+<figure align="center"><br>  <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Parallax-scroll-example.gif" alt="Abb.1" width="260px"><br>  <figcaption>Abb.1<br> <a href="https://de.wikipedia.org/wiki/Bewegungsparallaxe#/media/File:Parallax-scroll-example.gif" target="_blank" rel="external">Wikipedia-Bewegungsparallaxe</a><br></figcaption><br></figure>
+
+<p>Bei diesem Phänomen bewegen sich die entfernte Objekte langsamer als die Objekte, die nah von dem Betrachter liegt. Beispielweise in Abb.1 bewegen sich die Berge horizontal langsamer als die Bäume und Gras, indem die Berge  sich entfernter von dem honrizontal bewegenden Betrachter befinden, als die Pflanzen. Gleichzeitig bleibt der Mond und Himmel still als Hintergrund. </p>
+<p>Mittels Parallax Scrolling lassen die Nutzer der Webseite ein schönes visuelles Erlebnis von dreidimensionalen Bewegungseffekte erfahren.<br><br></p>
+<h3 id="Auspragungsformen"><a href="#Auspragungsformen" class="headerlink" title="Ausprägungsformen"></a>Ausprägungsformen</h3><p>Um die Bewegungseffekte in Webseite einzusetzen, sollen einen stabilen Hintergrund und mehrere bewegliche Container oder Ebene mit entsprechenden Objekten eingeführt. Jede Ebene muss unabhängig voneinander sein und eine verschiedene Bewegungsgeschwindigkeit besitzen. Damit beim Scrolling wird dynamischer Effekt auf der Webseite erstellt. Die Verteilung aller Ebene und Bewegungsgeschwindigkeiten lassen sich mit HTML und CSS schaffen.</p>
+<p>Beim Bewegungseffekt spielt das Scrolling der Webseit beziehungsweise Scrollbalken eine wichtige Rolle. Sie steuert es, in wiefern sich die Objekte verschiedener Ebenen bewegen. Die Einsetzung eines Eventlisteners und einer Callback-Funktion in JavaScript ermöglicht diese Steuerung. </p>
+<p>Über die datailierte Funktionsweise wird in <em>Technische Grundlagen</em> noch erklärt.<br><br></p>
+<h3 id="Technische-Grundlagen"><a href="#Technische-Grundlagen" class="headerlink" title="Technische Grundlagen"></a>Technische Grundlagen</h3><h4 id="Verteilung-der-Ebenen"><a href="#Verteilung-der-Ebenen" class="headerlink" title="Verteilung der Ebenen"></a>Verteilung der Ebenen</h4><p>Die Voraussetzung der Verteilung der Ebenen ist die Erstellung verschiedener Ebene. Gleichzeitig gilt der Hintergrund von <code>body</code> als der stabile Hintergrund der Bewegungsparallaxe.<br>HTML:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"oben"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"mittel"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"unten"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Das Codestück zeigt, dass drei Container (Ebenen) jeweils mit <code>id</code> “<code>oben</code>“, “<code>mittel</code>“ und “<code>unten</code>“ erstellt werden. Die IDs kennzeichnen einerseits die Positionierung der drei Ebenen aufeinander. Andererseits weisen sie auf die unterschiedliche Bewegungsgeschwindigkeiten diese Ebenen: <code>#oben</code>-Ebene bewegt sich am schnellsten, weil sie sehr nah vom Beobachter liegt; <code>#unten</code>-Ebene bewegt sich selbstverständlich am langsamsten.</p>
+<p>Obwohl die Struktur des Codestücks bietet einen Hinweis auf die Positionierung und Reihenfolge aller Ebenen, wird es nun mit Eigenschaft <code>z-index</code> in CSS ermöglicht. Die Eigenschaft <code>z-index</code> bezieht sich darauf, in welcher Reihenfolge Elemente auf dem Ausgabemedium dargestellt werden. Je größer <code>z-index</code> ein Elment besitzt, desto näher liegt es von Beobachter, desto mehr oben befindet es sich in der Struktur der Webseite. Der Wert von <code>z-index</code> muss Integer sein. Beide positive und negative ganze Zahl sind akzeptabel.</p>
+<figure align="center"><br>  <img src="https://picload.org/image/rcllpwdw/abb2c.png" width="600px" alt="Abb.2"><br>  <figcaption>Abb.2</figcaption><br></figure>
+
+<p>Nach der Struktur im Abb.2 wird die Eigenschaften in CSS so umgesetzt.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">  margin: 0;</div><div class="line">  padding: 0;</div><div class="line">  height: 2000px;</div><div class="line">  background-color: #1ABC9C;</div><div class="line">&#125;</div><div class="line"></div><div class="line">div &#123;</div><div class="line">  position: fixed;</div><div class="line">  top: 0;</div><div class="line">  left: 0;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line"></div><div class="line">#oben &#123;</div><div class="line">  z-index: 3;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#mittel &#123;</div><div class="line">  z-index: 2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#unten &#123;</div><div class="line">  z-index: 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Es ist zu beachten, dass die Eigenschaft der Positionierung <code>fixed</code> für alle <code>div</code>-Elemente hinzugefügt wird. Diese Einstellung hat engen Zusammenhang mit der Steuerung der Bewegungsgeschwindigkeiten aller Ebenen. Darüber lässt sich in <em>Steuerung der Bewegungsgeschwindigkeiten</em> noch erzählen.<br><br></p>
+<h4 id="Steuerung-der-Bewegungsgeschwindigkeiten"><a href="#Steuerung-der-Bewegungsgeschwindigkeiten" class="headerlink" title="Steuerung der Bewegungsgeschwindigkeiten"></a>Steuerung der Bewegungsgeschwindigkeiten</h4><p>Darstellung und Steuerung verschiedener Bewegungsgeschwindigkeit jeder Ebene gehört zum Schlüssel vom Bewegungseffekt.<br>Beispielweise wenn der Nutzer die Webseite nach unten um eine bestimmte Länge von Strecke scrollt, dann bewegt Körper der Webseite sich nach unten auch um die gleichlange Strecke. Alle andere Ebenen bewegen sich nach unten nicht um diese gleichlange Strecke sondern um drei verschiedene Kürzere. Auf diese Weise werden unterschiedliche Bewegungsgeschwindigkeiten dargestellt und Dynamik geschaffen.</p>
+<p>Aber wie kann die verschiedene Länge von Strecke beim Scrollen ermöglicht? Lassen wir uns den Code von JavaScript ansehen.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Callback-Funktion </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parallaxScroll</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">// Eine Variable deklarieren, um die aktuelle vertikale Position innerhalb der Seite zu speichern</span></div><div class="line">  <span class="keyword">var</span> scrolled = <span class="built_in">window</span>.pageYOffset;</div><div class="line">  </div><div class="line">  <span class="comment">/* Die Werte der CSS-Eigenschaft "top" von 3 Container/ Ebenen lassen sich </span></div><div class="line">    durch JavaScript im Lauf des Scrollen verändern.</div><div class="line"></div><div class="line">    Wenn der Wert der CSS-Eigenschaft "top" immer kleiner wird, bewegt sich das entsprchende </div><div class="line">    Element immer nach oben.</div><div class="line">  */</div><div class="line"> </div><div class="line">  <span class="comment">// schnell bewegen</span></div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'oben'</span>).style.top = (<span class="number">0</span>-(scrolled*<span class="number">0.7</span>))+<span class="string">'px'</span>; </div><div class="line"></div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'mittel'</span>).style.top = (<span class="number">0</span>-(scrolled*<span class="number">0.4</span>))+<span class="string">'px'</span>;</div><div class="line"></div><div class="line">  <span class="comment">// langsam bewegen</span></div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'unten'</span>).style.top = (<span class="number">0</span>-(scrolled*<span class="number">0.2</span>))+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Eventlistener dient zur Beobactung der Bewegung beim Scrollen. </span></div><div class="line"><span class="comment">// Wenn Event "scroll" ausgelöst wird, lässt sich die Callback-Funktion parallaxScroll() aufrufen.</span></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, parallaxScroll);</div></pre></td></tr></table></figure>
+<p>Wenn die Webseite beispielweise um 1000px gescrollt wird, ist der Wert von <code>window.pageYOffset</code> 1000. Dann sind die Werte der <code>top</code>-Eigenschaft von <code>#oben</code>, <code>#mittel</code> und <code>#unten</code>  jeweils -700px, -400px und -200px. Das heißt bewegen sich die drei Ebenen jeweils um 700px, 400px und 200px. Bei jedem Scrollen bewegen sich der Körper und drei Ebenen um verschiedene lange Strecke, was zum Bewegungsparallaxe-Effekt führt. </p>
+<figure align="center"><br>  <img src="https://picload.org/image/rcllwodi/abb3.png" alt="Abb.3"><br>  <figcaption>Abb.3</figcaption><br></figure>
+
+<p>Die Steuerung der verschiedenen Bewegungsstrecken wird wie oben eingesetzt, <strong>vorausgesetzt, dass die <code>postion</code>-Eigenschaft dieser Ebene <code>fixed</code> eingestellt</strong>. Auf dieser Weise bewegen sich diese Ebenen selber nicht spontan mit Maus-Scrollen, sondern die Position der Ebene hängt sich von der Callback-Funktion ab, die von Event <code>scroll</code> ausgelöst wird.<br><br></p>
+<h2 id="Erklarung-des-Demonstrators"><a href="#Erklarung-des-Demonstrators" class="headerlink" title="Erklärung des Demonstrators"></a>Erklärung des Demonstrators</h2><p>Zum eigenen Demonstrator erstelle ich eine Webseite, die eine vertikale Szene von Unterwasserwelt darstellt.</p>
+<p><a href="https://codepen.io/yidaoJ/full/aWJBJE/" target="_blank" rel="external">Demo hier</a></p>
+<h3 id="Struktur-schaffen"><a href="#Struktur-schaffen" class="headerlink" title="Struktur schaffen"></a>Struktur schaffen</h3><p>Die Darstellung der Szene besteht aus vier Teilen: blaues Meer als Hintergrund und drei Ebene jeweils für Fischschwarm, Bubbles und einzelne Fische. Der Fischschwarm befinden sich am entferntesten von dem Betrachter und bewegen sich selbstverständlich am langsamsten. Die einzelne Fische sind ganz nah vom Betrachter und bewegen sich am schnellsten. Die Ebene der Bubbles liegt zwischen die oben genannten Ebenen.</p>
+<p>Ein Stück der Szene ist auszuwählen, um die Struktur der Ebenen klar zu zeigen.</p>
+<figure align="center"><br>  <img src="https://picload.org/image/rclcwwil/abb4b.jpg" width="520px" alt="Abb.4"><br>  <figcaption>Abb.4</figcaption><br></figure>
+
+<p>Gemäß der Struktur wird die folgende HTML- und CSS-Dokument erstellt.</p>
+<p>HTML:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="comment">&lt;!-- oben Fisch --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parallax_bg"</span> <span class="attr">id</span>=<span class="string">"level1"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Elemente auf dieser Ebene --&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level1_1"</span>&gt;</span></div><div class="line">      <span class="comment">&lt;!-- Hier wird nun ein Bild als Beispiel hinzugefügt --&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/fish1.png"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Um die Plätze zu sparen lassen sich nun div-Container mit entsprchende id eingegeben. --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level1_2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level1_3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level1_4"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level1_5"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level1_6"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level1_7"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level1_8"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="comment">&lt;!-- mittel Bubbles --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parallax_bg"</span> <span class="attr">id</span>=<span class="string">"level2"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Elemente auf dieser Ebene --&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level2_1"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/bubble2.png"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level2_2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level2_3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level2_4"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level2_5"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="comment">&lt;!-- unten Fischschwarm --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parallax_bg"</span> <span class="attr">id</span>=<span class="string">"level3"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Elemente auf dieser Ebene --&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level3_1"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/fishes1.png"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level3_2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level3_3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"level3_4"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>CSS:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">    <span class="comment">/* insgesamte Höhe der Webseite einstellen */</span></div><div class="line">	<span class="attribute">height</span>: <span class="number">3440px</span>;	</div><div class="line">    <span class="comment">/* Blaues Meer als Hintergrund, </span></div><div class="line">        synchronische Bewegung mit gleiche Geschwindigkeit beim Scrollen </div><div class="line">    */</div><div class="line">	<span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"img/undersea2.jpg"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* ======= allgemeine Eigenschaften der drei Ebenen einstellen ======== */</span></div><div class="line"><span class="selector-class">.parallax_bg</span> &#123;</div><div class="line">    <span class="comment">/* wichtige Einstellung für Positionierung: fixed */</span></div><div class="line">	<span class="attribute">position</span>: fixed;</div><div class="line">	<span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">3440px</span>;</div><div class="line">	<span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">img</span> &#123;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* ========= Reihenfolge und Positionierung der Ebenen explizit einstellen ======== */</span></div><div class="line"><span class="comment">/* oben */</span></div><div class="line"><span class="selector-id">#level1</span> &#123;</div><div class="line">	<span class="attribute">z-index</span>: <span class="number">5</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* mittel*/</span></div><div class="line"><span class="selector-id">#level2</span> &#123;</div><div class="line">	<span class="attribute">z-index</span>: <span class="number">3</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* unten*/</span></div><div class="line"><span class="selector-id">#level3</span> &#123;</div><div class="line">	<span class="attribute">z-index</span>: <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* ======== Bild-Elemente auf jeder Ebene einstellen ======== */</span></div><div class="line"><span class="comment">/* Um Plätze zu sparen ist für jeder Ebene nun ein Bild als Beispiel einzusetzen. */</span></div><div class="line"><span class="comment">/* level1 images*/</span></div><div class="line"><span class="selector-id">#level1_1</span> <span class="selector-tag">img</span>&#123;</div><div class="line">	<span class="attribute">top</span>: <span class="number">180px</span>;</div><div class="line">	<span class="attribute">left</span>: <span class="number">50px</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">250px</span>;</div><div class="line">	<span class="attribute">height</span>: auto;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* level2 images*/</span></div><div class="line"><span class="selector-id">#level2_1</span> <span class="selector-tag">img</span> &#123;</div><div class="line">	<span class="attribute">top</span>: -<span class="number">30px</span>;</div><div class="line">	<span class="attribute">left</span>: <span class="number">300px</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">30%</span>;</div><div class="line">	<span class="attribute">height</span>: auto;</div><div class="line">	<span class="attribute">opacity</span>: .<span class="number">5</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* level3 images */</span></div><div class="line"><span class="selector-id">#level3_1</span> <span class="selector-tag">img</span> &#123;</div><div class="line">	<span class="attribute">top</span>: -<span class="number">120px</span>;</div><div class="line">	<span class="attribute">right</span>: <span class="number">50px</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">40%</span>;</div><div class="line">	<span class="attribute">opacity</span>: .<span class="number">8</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="Steuerung-der-Bewegungsgeschwindigkeiten-1"><a href="#Steuerung-der-Bewegungsgeschwindigkeiten-1" class="headerlink" title="Steuerung der Bewegungsgeschwindigkeiten"></a>Steuerung der Bewegungsgeschwindigkeiten</h3><p>Anschließend kommt die Steuerung der “Bewegungsgeschwindigkeiten” jeder Ebene in JavaScript.<br>JavaScript:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Callback-Funktion </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parallaxScroll</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// Eine Variable deklarieren, </span></div><div class="line">    <span class="comment">// um die aktuelle vertikale Position innerhalb der Seite zu speichern.</span></div><div class="line">	<span class="keyword">var</span> scrolled = <span class="built_in">window</span>.pageYOffset;</div><div class="line"></div><div class="line">    <span class="comment">// Die aktuelle vertikale Positionswert ist auf Konsole auszugeben,</span></div><div class="line">    <span class="comment">// um die Daten und der Funktion zu überprüfen.</span></div><div class="line">	<span class="built_in">console</span>.log(scrolled);</div><div class="line">  </div><div class="line">    <span class="comment">/*    </span></div><div class="line">      1. Die Werte der CSS-Eigenschaft "top" von 3 Container/ Ebenen lassen sich </div><div class="line">         durch JavaScript im Lauf des Scrollen verändern.</div><div class="line"></div><div class="line">      2. Wenn der Wert der CSS-Eigenschaft "top" immer kleiner wird, bewegt sich </div><div class="line">         das entsprchende Element immer nach oben.</div><div class="line"></div><div class="line">      3. Die aktuelle vertikale Positionswerte aller Ebenen werden auf Konsole </div><div class="line">         ausgegeben, damit könnten die Bewegungsstrecken jeder Ebene beim Scrollen </div><div class="line">         anschaulich erfahren werden. </div><div class="line">    */</div><div class="line"></div><div class="line">	<span class="comment">// schnell</span></div><div class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'level3'</span>).style.top = (<span class="number">0</span>-(scrolled*<span class="number">0.2</span>))+<span class="string">'px'</span>;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'level3: '</span> + <span class="built_in">document</span>.getElementById(<span class="string">'level3'</span>).style.top);</div><div class="line">	<span class="comment">// mittel</span></div><div class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'level2'</span>).style.top = (<span class="number">0</span>-(scrolled*<span class="number">0.4</span>))+<span class="string">'px'</span>;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'level2: '</span> + <span class="built_in">document</span>.getElementById(<span class="string">'level2'</span>).style.top);</div><div class="line">	<span class="comment">// langsam</span></div><div class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'level1'</span>).style.top = (<span class="number">0</span>-(scrolled*<span class="number">0.7</span>))+<span class="string">'px'</span>; </div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'level1: '</span> + <span class="built_in">document</span>.getElementById(<span class="string">'level1'</span>).style.top);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Eventlistener dient zur Beobactung der Bewegung beim Scrollen. </span></div><div class="line"><span class="comment">// Wenn Event "scroll" ausgelöst wird, lässt sich die Callback-Funktion parallaxScroll() aufrufen.</span></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, parallaxScroll);</div></pre></td></tr></table></figure>
+<p><br><br>Wenn der Besucher die Maus scrollt, wird Event <code>scroll</code> ausgelöst. Die auszugebene Daten lassen sich auf Konsole gezeigt. </p>
+<figure align="center"><br>  <img src="https://picload.org/image/rclidwla/abb5.jpg" alt="Abb.5"><br>  <figcaption>Abb.5</figcaption><br></figure>
+
+<p>Aus der Abb.5 ergibt sich die Schlußfolgerung, dass bei jedem Scrollen, die obere / nahe Ebene sich immer eine längere Strecke bewegt, als die untere / entfernte Ebene. Dadurch sieht es aus, dass die Elemente sich auf der Webseite mit verschiedenen Geschwindigkeiten bewegen. Daher hat die Besucher ein visuelles Erlebnis von Bewegungsparallaxe.</p>
+<p><strong>PS: Alle Bilder in Demo sind aus Internet.</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/Sum-Up/" rel="tag"># Sum-Up</a>
+          
+            <a href="/tags/Parallax-Scrolling/" rel="tag"># Parallax Scrolling</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/02/CSS-transform-2/" rel="next" title="CSS transform (2)">
+                <i class="fa fa-chevron-left"></i> CSS transform (2)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://i.imgsafe.org/af774a292e.jpg"
+               alt="YiDaoJ" />
+          <p class="site-author-name" itemprop="name">YiDaoJ</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/YiDaoJ" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Technologiekompetenz"><span class="nav-number">1.</span> <span class="nav-text">Technologiekompetenz</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Was-ist-“Parallax-Scrolling”"><span class="nav-number">1.1.</span> <span class="nav-text">Was ist “Parallax Scrolling”?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Auspragungsformen"><span class="nav-number">1.2.</span> <span class="nav-text">Ausprägungsformen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Technische-Grundlagen"><span class="nav-number">1.3.</span> <span class="nav-text">Technische Grundlagen</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Verteilung-der-Ebenen"><span class="nav-number">1.3.1.</span> <span class="nav-text">Verteilung der Ebenen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Steuerung-der-Bewegungsgeschwindigkeiten"><span class="nav-number">1.3.2.</span> <span class="nav-text">Steuerung der Bewegungsgeschwindigkeiten</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Erklarung-des-Demonstrators"><span class="nav-number">2.</span> <span class="nav-text">Erklärung des Demonstrators</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Struktur-schaffen"><span class="nav-number">2.1.</span> <span class="nav-text">Struktur schaffen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Steuerung-der-Bewegungsgeschwindigkeiten-1"><span class="nav-number">2.2.</span> <span class="nav-text">Steuerung der Bewegungsgeschwindigkeiten</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YiDaoJ</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'yidaoj';
+      var disqus_identifier = '2017/04/28/Parallax-Scrolling-ein-kurzes-Tutorial/';
+
+      var disqus_title = "Parallax Scrolling - ein kurzes Tutorial";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
