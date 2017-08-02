@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS,Sum-Up," />
+  <meta name="keywords" content="JavaScript,Practice," />
 
 
 
@@ -84,19 +84,33 @@
 
 
 
-<meta name="description" content="So… erkläre ich über 2D Skew und Kombination der Transformation weiter. :p
-2D SkewÄhnlich wie translate() und scale(),  skew() kann auch mit  skewX() und skewY() benutzt, um das Verzerren in horizonta">
+<meta name="description" content="该练习来自Wes Bos的Javascript30的项目，旨在三十天内每天进行一个JavaScript练习。该项目的完整文档和答案地址：JavaScript30-Github本文是自己在练习过程中的思路小节。欢迎交流。
+在线演示
+
+思路
+监听keydown事件，在该事件被触发时播放音效，相应的call-back function被调用：
+window.addEventListener(&amp;#39;k">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS transform (2)">
-<meta property="og:url" content="http://yoursite.com/2017/03/02/CSS-transform-2/index.html">
+<meta property="og:title" content="JavaScript30 - 01 JavaScript Drum Kit">
+<meta property="og:url" content="http://yoursite.com/2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/index.html">
 <meta property="og:site_name" content="YiDaoJ's Blog">
-<meta property="og:description" content="So… erkläre ich über 2D Skew und Kombination der Transformation weiter. :p
-2D SkewÄhnlich wie translate() und scale(),  skew() kann auch mit  skewX() und skewY() benutzt, um das Verzerren in horizonta">
-<meta property="og:updated_time" content="2017-03-04T13:58:43.931Z">
+<meta property="og:description" content="该练习来自Wes Bos的Javascript30的项目，旨在三十天内每天进行一个JavaScript练习。该项目的完整文档和答案地址：JavaScript30-Github本文是自己在练习过程中的思路小节。欢迎交流。
+在线演示
+
+思路
+监听keydown事件，在该事件被触发时播放音效，相应的call-back function被调用：
+window.addEventListener(&amp;#39;k">
+<meta property="og:image" content="http://fs5.directupload.net/images/170802/dw9jywi5.jpg">
+<meta property="og:updated_time" content="2017-08-02T11:55:54.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS transform (2)">
-<meta name="twitter:description" content="So… erkläre ich über 2D Skew und Kombination der Transformation weiter. :p
-2D SkewÄhnlich wie translate() und scale(),  skew() kann auch mit  skewX() und skewY() benutzt, um das Verzerren in horizonta">
+<meta name="twitter:title" content="JavaScript30 - 01 JavaScript Drum Kit">
+<meta name="twitter:description" content="该练习来自Wes Bos的Javascript30的项目，旨在三十天内每天进行一个JavaScript练习。该项目的完整文档和答案地址：JavaScript30-Github本文是自己在练习过程中的思路小节。欢迎交流。
+在线演示
+
+思路
+监听keydown事件，在该事件被触发时播放音效，相应的call-back function被调用：
+window.addEventListener(&amp;#39;k">
+<meta name="twitter:image" content="http://fs5.directupload.net/images/170802/dw9jywi5.jpg">
 
 
 
@@ -124,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/02/CSS-transform-2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/"/>
 
 
 
 
 
-  <title> CSS transform (2) | YiDaoJ's Blog </title>
+  <title> JavaScript30 - 01 JavaScript Drum Kit | YiDaoJ's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -251,7 +265,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/CSS-transform-2/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="YiDaoJ">
@@ -275,7 +289,7 @@
             
             
               
-                CSS transform (2)
+                JavaScript30 - 01 JavaScript Drum Kit
               
             
           </h1>
@@ -288,8 +302,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-02T22:13:34+01:00">
-                2017-03-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T13:32:21+02:00">
+                2017-08-02
               </time>
             
 
@@ -322,8 +336,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2017/03/02/CSS-transform-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/02/CSS-transform-2/" itemprop="commentCount"></span>
+                <a href="/2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -349,23 +363,38 @@
       
 
       
-        <p>So… erkläre ich über <strong>2D Skew</strong> und <strong>Kombination der Transformation</strong> weiter. :p</p>
-<h2 id="2D-Skew"><a href="#2D-Skew" class="headerlink" title="2D Skew"></a>2D Skew</h2><p>Ähnlich wie <code>translate()</code> und <code>scale()</code>,  <code>skew()</code> kann auch mit  <code>skewX()</code> und <code>skewY()</code> benutzt, um das Verzerren in horizontaler und vertikaler Richtung zu ermöglichen. </p>
-<ul>
-<li>Die Einheit zu <code>skew()</code> ist auch <em>degree</em>.</li>
+        <p>该练习来自<a href="https://github.com/wesbos" target="_blank" rel="external">Wes Bos</a>的<a href="https://javascript30.com/" target="_blank" rel="external">Javascript30</a>的项目，旨在三十天内每天进行一个JavaScript练习。该项目的完整文档和答案地址：<a href="https://github.com/wesbos/JavaScript30" target="_blank" rel="external">JavaScript30-Github</a><br>本文是自己在练习过程中的思路小节。欢迎交流。<br><br></p>
+<p><a href="https://yidaoj.github.io/demos/js30/01/index.html" target="_blank" rel="external">在线演示</a></p>
+<p><br></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ul>
+<li><p>监听<code>keydown</code>事件，在该事件被触发时播放音效，相应的call-back function被调用：</p>
+<p><code>window.addEventListener(&#39;keydown&#39;, fucntion)</code></p>
+</li>
+<li><p>播放音频时，相应的页面HTML按钮元素显示动画效果：</p>
+<p><code>element.classList.add(&#39;animation&#39;)</code></p>
+</li>
+<li><p>动画效果完毕后，该元素恢复到起始状态：</p>
+<p><code>element.clasList.remove(&#39;animation&#39;)</code></p>
+</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box1</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skewX</span>(30deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box2</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skewX</span>(-20deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box3</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skewY</span>(40deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box4</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skewY</span>(-20deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box5</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skew</span>(20deg, 20deg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>Demo:</strong></p>
-<iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/zmpjtvvf/embedded/result,html,css/light" frameborder="0" allowfullscreen></iframe>
-<h2 id="Kombination-der-Transformation"><a href="#Kombination-der-Transformation" class="headerlink" title="Kombination der Transformation"></a>Kombination der Transformation</h2><p>Es ist üblich, dass mehrere transform-Eigenschaften auf einmal benutzt werden, indem die Eigenschaften mit Werten nacheinander codiert werden.</p>
-<p><strong>Demo:</strong></p>
-<iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/2aydv87o/embedded/result,html,css/light" frameborder="0" allowfullscreen></iframe>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box1</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(.5) <span class="built_in">rotate</span>(45deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box2</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.75) <span class="built_in">skewX</span>(20deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box3</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(80px) <span class="built_in">scaleY</span>(.6) <span class="built_in">rotate</span>(45deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box4</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">skew</span>(20deg, 20deg) <span class="built_in">scale</span>(.5, .5);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>Alle transform-Property werden in einer Anweisung/Deklaration geschrieben,  endet mit eine Semikolon.</li>
-<li>Verbindung der Eigenschaften mit leerzeichen, sondern nicht Komma.</li>
-<li>Wenn mehrere transform-Anweisungen deklariert werden, wrid nun die letzte realisiert. Alle vorherige gleichnamige (hier: transform) Deklarationen lassen sich verdecken.</li>
-</ul>
+<h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><p><strong>1. 监听<code>keydown</code>事件，<code>playAudio</code>作为call-back function被调用，在该事件被触发时播放音效。</strong></p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">playAudio</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="comment">// 事件e（此处为keydown）中包含属性keyCode,</span></div><div class="line">  <span class="comment">// 因此利用HTML5的data特性，将按键和HTML元素进行关联，</span></div><div class="line">  <span class="comment">// 以此来获取要播放的音频文件（元素）和添加动画效果的元素。</span></div><div class="line">  <span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`audio[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</div><div class="line">  <span class="keyword">const</span> key = <span class="built_in">document</span>.querySelector(<span class="string">`.key[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</div><div class="line">  </div><div class="line">  <span class="comment">// 如果该keyCode有相关联的音频元素，那么继续执行后面的代码；否则到此结束。</span></div><div class="line">  <span class="keyword">if</span>(!audio) <span class="keyword">return</span>; <span class="comment">// stop the function from running all together</span></div><div class="line">  <span class="comment">// otherwise error message: Uncaught TypeError: Cannot set property 'currentTime' of null</span></div><div class="line"></div><div class="line">  <span class="comment">// 将音频文件时间重置为0，避免因音频未播放完毕导致后来多次按下同一按键无播放效果</span></div><div class="line">  audio.currentTime = <span class="number">0</span>; <span class="comment">// set(rewind) the audio to start</span></div><div class="line">  <span class="comment">// 播放音频</span></div><div class="line">  audio.play();</div><div class="line"></div><div class="line">  <span class="comment">// 给相应的div元素添加动画效果</span></div><div class="line">  key.classList.add(<span class="string">'playing'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 监听keydown事件</span></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>, playAudio);</div></pre></td></tr></table></figure>
+<p>   ​</p>
+<p><strong>2. 页面按钮的动画效果与恢复</strong></p>
+<p>   在playAudio方法中给页面中的按钮元素添加了动画效果，改变了按钮元素的大小、边框、阴影式样。</p>
+<p>   那么如何去掉按钮元素的动画效果呢？</p>
+<p>   监听按钮元素的<code>transitionend</code>事件，从下图可以到每一次按下音频按键，该按键发生了transition后的<code>TransitionEvent</code>。<code>TransitionEvenet</code>有很多<code>propertyName</code>，这些<code>propertyName</code>依赖于通过css对该元素进行了哪些样式的改变。   ​</p>
+<p>   <img src="http://fs5.directupload.net/images/170802/dw9jywi5.jpg" alt=""></p>
+<p>   ​</p>
+<p>   可以从中选择一个<code>transform</code>的<code>propertyName</code>Event进行操作。</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTransition</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="comment">// console.log(e);</span></div><div class="line">  <span class="comment">// 如果该transitioned事件含有名为transform的属性，那么继续进行操作；否则就此退出。</span></div><div class="line">  <span class="keyword">if</span>(e.propertyName !== <span class="string">'transform'</span>) <span class="keyword">return</span>;</div><div class="line">  <span class="comment">// this为触发了该事件的当前元素，去除之前添加的playing样式。</span></div><div class="line">  <span class="keyword">this</span>.classList.remove(<span class="string">'playing'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 获取所有含"key"-class的元素</span></div><div class="line"><span class="keyword">const</span> keys = <span class="built_in">document</span>.querySelectorAll(<span class="string">".key"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 利用forEach方法进行遍历，为每一个元素添加transitionend事件监听。</span></div><div class="line">keys.forEach(<span class="function"><span class="params">key</span> =&gt;</span> key.addEventListener(<span class="string">'transitionend'</span>, removeTransition));</div></pre></td></tr></table></figure>
+<p>   ​<br>   ​</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>Template literals / 模板字面量</strong></p>
+<p>Template literals 是允许嵌入表达式的字符串字面量。  </p>
+<p>语法：`字符串${表达式}字符串`</p>
+<p>示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</div><div class="line"><span class="comment">// 普通字符串嵌入表达式</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"Fifteen is "</span> + (a + b) + <span class="string">" and\nnot "</span> + (<span class="number">2</span> * a + b) + <span class="string">"."</span>);</div><div class="line"><span class="comment">// 利用template literals</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">`Fifteen is <span class="subst">$&#123;a + b&#125;</span> and\nnot <span class="subst">$&#123;<span class="number">2</span> * a + b&#125;</span>.`</span>);</div></pre></td></tr></table></figure>
+<p>具体可参看<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings" target="_blank" rel="external">MDN文档</a> 。</p>
 
       
     </div>
@@ -389,9 +418,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-            <a href="/tags/Sum-Up/" rel="tag"># Sum-Up</a>
+            <a href="/tags/Practice/" rel="tag"># Practice</a>
           
         </div>
       
@@ -400,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/01/CSS-transform (1)/" rel="next" title="CSS transform (1)">
-                <i class="fa fa-chevron-left"></i> CSS transform (1)
+              <a href="/2017/04/29/Deutsch-lernen-mittels-Serie-1/" rel="next" title="Deutsch lernen mittels Serie(1)">
+                <i class="fa fa-chevron-left"></i> Deutsch lernen mittels Serie(1)
               </a>
             
           </div>
@@ -409,10 +438,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/28/Parallax-Scrolling-ein-kurzes-Tutorial/" rel="prev" title="Parallax Scrolling - ein kurzes Tutorial">
-                Parallax Scrolling - ein kurzes Tutorial <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -550,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2D-Skew"><span class="nav-number">1.</span> <span class="nav-text">2D Skew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kombination-der-Transformation"><span class="nav-number">2.</span> <span class="nav-text">Kombination der Transformation</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体实现"><span class="nav-number">2.</span> <span class="nav-text">具体实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
 
           </div>
@@ -674,9 +699,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'yidaoj';
-      var disqus_identifier = '2017/03/02/CSS-transform-2/';
+      var disqus_identifier = '2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/';
 
-      var disqus_title = "CSS transform (2)";
+      var disqus_title = "JavaScript30 - 01 JavaScript Drum Kit";
 
 
       function run_disqus_script(disqus_script) {
