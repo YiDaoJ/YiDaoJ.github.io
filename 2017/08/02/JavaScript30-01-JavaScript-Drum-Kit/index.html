@@ -1,0 +1,750 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,Practice," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="该练习来自Wes Bos的Javascript30的项目，旨在三十天内每天进行一个JavaScript练习。该项目的完整文档和答案地址：JavaScript30-Github本文是自己在练习过程中的思路小节。欢迎交流。
+在线演示
+
+思路
+监听keydown事件，在该事件被触发时播放音效，相应的call-back function被调用：
+window.addEventListener(&amp;#39;k">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript30 - 01 JavaScript Drum Kit">
+<meta property="og:url" content="http://yoursite.com/2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/index.html">
+<meta property="og:site_name" content="YiDaoJ's Blog">
+<meta property="og:description" content="该练习来自Wes Bos的Javascript30的项目，旨在三十天内每天进行一个JavaScript练习。该项目的完整文档和答案地址：JavaScript30-Github本文是自己在练习过程中的思路小节。欢迎交流。
+在线演示
+
+思路
+监听keydown事件，在该事件被触发时播放音效，相应的call-back function被调用：
+window.addEventListener(&amp;#39;k">
+<meta property="og:image" content="http://fs5.directupload.net/images/170802/dw9jywi5.jpg">
+<meta property="og:updated_time" content="2017-08-02T11:55:54.263Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript30 - 01 JavaScript Drum Kit">
+<meta name="twitter:description" content="该练习来自Wes Bos的Javascript30的项目，旨在三十天内每天进行一个JavaScript练习。该项目的完整文档和答案地址：JavaScript30-Github本文是自己在练习过程中的思路小节。欢迎交流。
+在线演示
+
+思路
+监听keydown事件，在该事件被触发时播放音效，相应的call-back function被调用：
+window.addEventListener(&amp;#39;k">
+<meta name="twitter:image" content="http://fs5.directupload.net/images/170802/dw9jywi5.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/"/>
+
+
+
+
+
+  <title> JavaScript30 - 01 JavaScript Drum Kit | YiDaoJ's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">YiDaoJ's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="YiDaoJ">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://i.imgsafe.org/af774a292e.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="YiDaoJ's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="YiDaoJ's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript30 - 01 JavaScript Drum Kit
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T13:32:21+02:00">
+                2017-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Frond-End/" itemprop="url" rel="index">
+                    <span itemprop="name">Frond-End</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>该练习来自<a href="https://github.com/wesbos" target="_blank" rel="external">Wes Bos</a>的<a href="https://javascript30.com/" target="_blank" rel="external">Javascript30</a>的项目，旨在三十天内每天进行一个JavaScript练习。该项目的完整文档和答案地址：<a href="https://github.com/wesbos/JavaScript30" target="_blank" rel="external">JavaScript30-Github</a><br>本文是自己在练习过程中的思路小节。欢迎交流。<br><br></p>
+<p><a href="https://yidaoj.github.io/demos/js30/01/index.html" target="_blank" rel="external">在线演示</a></p>
+<p><br></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ul>
+<li><p>监听<code>keydown</code>事件，在该事件被触发时播放音效，相应的call-back function被调用：</p>
+<p><code>window.addEventListener(&#39;keydown&#39;, fucntion)</code></p>
+</li>
+<li><p>播放音频时，相应的页面HTML按钮元素显示动画效果：</p>
+<p><code>element.classList.add(&#39;animation&#39;)</code></p>
+</li>
+<li><p>动画效果完毕后，该元素恢复到起始状态：</p>
+<p><code>element.clasList.remove(&#39;animation&#39;)</code></p>
+</li>
+</ul>
+<h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><p><strong>1. 监听<code>keydown</code>事件，<code>playAudio</code>作为call-back function被调用，在该事件被触发时播放音效。</strong></p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">playAudio</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="comment">// 事件e（此处为keydown）中包含属性keyCode,</span></div><div class="line">  <span class="comment">// 因此利用HTML5的data特性，将按键和HTML元素进行关联，</span></div><div class="line">  <span class="comment">// 以此来获取要播放的音频文件（元素）和添加动画效果的元素。</span></div><div class="line">  <span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`audio[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</div><div class="line">  <span class="keyword">const</span> key = <span class="built_in">document</span>.querySelector(<span class="string">`.key[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</div><div class="line">  </div><div class="line">  <span class="comment">// 如果该keyCode有相关联的音频元素，那么继续执行后面的代码；否则到此结束。</span></div><div class="line">  <span class="keyword">if</span>(!audio) <span class="keyword">return</span>; <span class="comment">// stop the function from running all together</span></div><div class="line">  <span class="comment">// otherwise error message: Uncaught TypeError: Cannot set property 'currentTime' of null</span></div><div class="line"></div><div class="line">  <span class="comment">// 将音频文件时间重置为0，避免因音频未播放完毕导致后来多次按下同一按键无播放效果</span></div><div class="line">  audio.currentTime = <span class="number">0</span>; <span class="comment">// set(rewind) the audio to start</span></div><div class="line">  <span class="comment">// 播放音频</span></div><div class="line">  audio.play();</div><div class="line"></div><div class="line">  <span class="comment">// 给相应的div元素添加动画效果</span></div><div class="line">  key.classList.add(<span class="string">'playing'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 监听keydown事件</span></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>, playAudio);</div></pre></td></tr></table></figure>
+<p>   ​</p>
+<p><strong>2. 页面按钮的动画效果与恢复</strong></p>
+<p>   在playAudio方法中给页面中的按钮元素添加了动画效果，改变了按钮元素的大小、边框、阴影式样。</p>
+<p>   那么如何去掉按钮元素的动画效果呢？</p>
+<p>   监听按钮元素的<code>transitionend</code>事件，从下图可以到每一次按下音频按键，该按键发生了transition后的<code>TransitionEvent</code>。<code>TransitionEvenet</code>有很多<code>propertyName</code>，这些<code>propertyName</code>依赖于通过css对该元素进行了哪些样式的改变。   ​</p>
+<p>   <img src="http://fs5.directupload.net/images/170802/dw9jywi5.jpg" alt=""></p>
+<p>   ​</p>
+<p>   可以从中选择一个<code>transform</code>的<code>propertyName</code>Event进行操作。</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTransition</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="comment">// console.log(e);</span></div><div class="line">  <span class="comment">// 如果该transitioned事件含有名为transform的属性，那么继续进行操作；否则就此退出。</span></div><div class="line">  <span class="keyword">if</span>(e.propertyName !== <span class="string">'transform'</span>) <span class="keyword">return</span>;</div><div class="line">  <span class="comment">// this为触发了该事件的当前元素，去除之前添加的playing样式。</span></div><div class="line">  <span class="keyword">this</span>.classList.remove(<span class="string">'playing'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 获取所有含"key"-class的元素</span></div><div class="line"><span class="keyword">const</span> keys = <span class="built_in">document</span>.querySelectorAll(<span class="string">".key"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 利用forEach方法进行遍历，为每一个元素添加transitionend事件监听。</span></div><div class="line">keys.forEach(<span class="function"><span class="params">key</span> =&gt;</span> key.addEventListener(<span class="string">'transitionend'</span>, removeTransition));</div></pre></td></tr></table></figure>
+<p>   ​<br>   ​</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>Template literals / 模板字面量</strong></p>
+<p>Template literals 是允许嵌入表达式的字符串字面量。  </p>
+<p>语法：`字符串${表达式}字符串`</p>
+<p>示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</div><div class="line"><span class="comment">// 普通字符串嵌入表达式</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"Fifteen is "</span> + (a + b) + <span class="string">" and\nnot "</span> + (<span class="number">2</span> * a + b) + <span class="string">"."</span>);</div><div class="line"><span class="comment">// 利用template literals</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">`Fifteen is <span class="subst">$&#123;a + b&#125;</span> and\nnot <span class="subst">$&#123;<span class="number">2</span> * a + b&#125;</span>.`</span>);</div></pre></td></tr></table></figure>
+<p>具体可参看<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings" target="_blank" rel="external">MDN文档</a> 。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/Practice/" rel="tag"># Practice</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/29/Deutsch-lernen-mittels-Serie-1/" rel="next" title="Deutsch lernen mittels Serie(1)">
+                <i class="fa fa-chevron-left"></i> Deutsch lernen mittels Serie(1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/05/JavaScript30-02-JS-and-CSS-Clock/" rel="prev" title="JavaScript30 - 02 JS and CSS Clock">
+                JavaScript30 - 02 JS and CSS Clock <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://i.imgsafe.org/af774a292e.jpg"
+               alt="YiDaoJ" />
+          <p class="site-author-name" itemprop="name">YiDaoJ</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/YiDaoJ" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体实现"><span class="nav-number">2.</span> <span class="nav-text">具体实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YiDaoJ</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'yidaoj';
+      var disqus_identifier = '2017/08/02/JavaScript30-01-JavaScript-Drum-Kit/';
+
+      var disqus_title = "JavaScript30 - 01 JavaScript Drum Kit";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
